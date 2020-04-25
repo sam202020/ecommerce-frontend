@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "shopper/product", component: ProductComponent },
   { path: "shopper/home", component: ShopperHomeComponent },
-  { path: "", component: ShopperHomeComponent, pathMatch: "full" },
+  { path: "", component: ShopperHomeComponent },
 ];
 
 @NgModule({

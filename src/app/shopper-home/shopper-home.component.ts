@@ -9,7 +9,7 @@ import { Product } from "../shared/product.model";
   styleUrls: ["./shopper-home.component.css"],
 })
 export class ShopperHomeComponent implements OnInit {
-  products: any;
+  products: Product[];
 
   constructor(
     private productApiService: ProductApiService,
@@ -22,7 +22,7 @@ export class ShopperHomeComponent implements OnInit {
 
   getProducts(): void {
     this.productApiService.getAllProducts().subscribe(
-      (data: any) => {
+      (data: Product[]) => {
         this.products = data;
       },
       (error) => console.error(error)
