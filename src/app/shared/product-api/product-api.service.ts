@@ -19,7 +19,6 @@ export class ProductApiService {
   }
 
   addNewProduct(newProduct: NewProduct): Observable<any> {
-    console.log(newProduct);
     return this.http.post<Product>(this.API_URL + "add-product", newProduct);
   }
 

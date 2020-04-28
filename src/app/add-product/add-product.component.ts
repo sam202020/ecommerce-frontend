@@ -27,6 +27,7 @@ export class AddProductComponent implements OnInit {
 
   onSubmit(): void {
     this.productApiService.addNewProduct({ ...this.productForm.value }).subscribe(data => {
+      console.log(data);
       this.router.navigateByUrl('/admin/home');
     });
   }
