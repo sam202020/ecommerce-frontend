@@ -16,6 +16,8 @@ import { ShopperHomeComponent } from './shopper-home/shopper-home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {ProductApiService } from './shared/product-api/product-api.service'
+import { AuthApiService } from './shared/auth-api/auth-api.service'
+import { UserInfoService } from './shared/user-info/user-info.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import {ProductApiService } from './shared/product-api/product-api.service'
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [ProductApiService],
+  providers: [ProductApiService, AuthApiService, UserInfoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
