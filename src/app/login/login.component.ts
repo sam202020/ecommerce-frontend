@@ -13,5 +13,9 @@ export class LoginComponent implements OnInit {
   });
   constructor(private formBuilder: FormBuilder) {}
 
+  login = (loginData) => {
+    console.log(loginData)
+  }
+
   ngOnInit() {}
 }
