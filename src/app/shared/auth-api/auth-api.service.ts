@@ -7,7 +7,7 @@ import { NewProduct, Product } from "../product.model";
   providedIn: "root",
 })
 export class AuthApiService {
-  API_URL = "http://127.0.0.1:8080/";
+  API_URL = "api/";
 
   private apiData = new BehaviorSubject<any>(null);
   public apiData$ = this.apiData.asObservable();
