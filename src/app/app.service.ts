@@ -13,10 +13,10 @@ export class AppService {
 
   authenticate(credentials, callback) {
       const headers = new HttpHeaders(credentials ? {
-          authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+          authorization : 'Basic ' + btoa(credentials.email + ':' + credentials.password)
       } : {});
 
-      this.http.get('user', {headers: headers}).subscribe(response => {
+      this.http.get('login-user', {headers: headers}).subscribe(response => {
           if (response['name']) {
               this.authenticated = true;
           } else {
@@ -24,7 +24,5 @@ export class AppService {
           }
           return callback && callback();
       });
-
   }
-
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { AppService } from '../app.service';
 
 @Component({
   selector: "app-login",
@@ -11,10 +14,22 @@ export class LoginComponent implements OnInit {
     email: "",
     password: "",
   });
-  constructor(private formBuilder: FormBuilder) {}
+
+  error = null;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private app: AppService, 
+    private http: HttpClient, 
+    private router: Router) {
+  }
 
   login = (loginData) => {
     console.log(loginData)
+    this.app.authenticate(loginData, () => {
+      this.router.navigateByUrl('/');
+    });
+    return false;
   }
 
   ngOnInit() {}
