@@ -16,7 +16,7 @@ export class AppService {
           authorization : 'Basic ' + btoa(credentials.email + ':' + credentials.password)
       } : {});
 
-      this.http.get('login-user', {headers: headers}).subscribe(response => {
+      this.http.get('api/login-user', {headers: headers}).subscribe(response => {
           if (response['name']) {
               this.authenticated = true;
           } else {
